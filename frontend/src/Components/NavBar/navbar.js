@@ -8,20 +8,18 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => setIsOpen(!isOpen);
-
   const closeNavbar = () => setIsOpen(false);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark px-3" style={{ backgroundColor: "#003333" }}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">GymAPP</Link>
-        
+
         <button className="navbar-toggler" type="button" onClick={toggleNavbar}>
           <span className="navbar-toggler-icon"></span>
         </button>
 
-
-        <div className={`custom-menu collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
+        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav me-auto"> 
             <li className="nav-item">
               <Link className="nav-link" to="/clientes" onClick={closeNavbar}>
@@ -45,9 +43,15 @@ function Navbar() {
             </li>
           </ul>
 
-          <ul className="navbar-nav ms-auto">
+          {/* Notificaciones y Perfil agrupados correctamente */}
+          <ul className="navbar-nav ms-auto d-flex align-items-rigth">
+            <li className="nav-item ">
+              <Link className="nav-link " to="/notificaciones" onClick={closeNavbar}>
+                <i className="bi bi-bell-fill"></i> Notificaciones
+              </Link>
+            </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/perfil" onClick={closeNavbar}>
+              <Link className="nav-link " to="/perfil" onClick={closeNavbar}>
                 <i className="bi bi-person-circle"></i> Perfil
               </Link>
             </li>
@@ -58,38 +62,38 @@ function Navbar() {
       <style>
         {`
           @media (max-width: 991px) {
-            .custom-menu {
+            .navbar-collapse {
               position: absolute;
               top: 100%;
-              right: 0; 
-              width: 46%;
+              right: 0;
+              width: 40%;
               background-color: #025c4c;
               box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
               z-index: 1000;
-              border-radius: 0; 
+              border-radius: 0;
+              padding: 7px;
             }
 
-            .custom-menu ul {
-              padding: 10px;
-              margin: 0;
+            .navbar-collapse .nav-item {
+              margin-bottom: 2px;
+              text-align: rigth;
             }
 
-            .custom-menu .nav-item {
-              margin-bottom: 5px;
-            }
-
-            .custom-menu .nav-link {
+            .navbar-collapse .nav-link {
               color: white;
-              padding: 10px;
+              padding: 5 px;
               display: block;
               border-radius: 5px;
             }
 
-            .custom-menu .nav-link:hover {
+            .navbar-collapse .nav-link:hover {
               background-color: #028a6e;
             }
-          }
 
+            .navbar-nav.ms-auto {
+              justify-content: rigth;
+            }
+          }
         `}
       </style>
     </nav>
