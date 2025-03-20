@@ -115,7 +115,6 @@ function Mensajes() {
 
       <div className="row border rounded shadow" style={{ height: "500px" }}>
         
-        {/* Barra lateral */}
         <div className="col-md-3 col-12 p-0 bg-light border-end">
           <h5 className="p-3 text-white text-center" style={{ backgroundColor: "#017c64" }}>
             {mostrarClientes ? "Clientes" : "Entrenadores"}
@@ -144,7 +143,6 @@ function Mensajes() {
           </div>
         </div>
 
-        {/* Área del Chat */}
         <div className="col-md-9 col-12 d-flex flex-column p-0">
           <div className="flex-grow-1 p-3 bg-dark bg-opacity-10 overflow-auto">
             {chatActivo.mensajes.map(msg => (
@@ -155,7 +153,7 @@ function Mensajes() {
                 : "bg-light text-dark"
             }`} style={{
                 display: "inline-block",
-                backgroundColor: msg.sender === "Entrenador" ? "#017c64" : "#f8f9fa" // Cambia el color aquí
+                backgroundColor: msg.sender === "Entrenador" ? "#017c64" : "#f8f9fa" 
             }}>
                 <p className="mb-1"><strong>{msg.sender}:</strong></p>
                 <p className="mb-0">{msg.text}</p>
