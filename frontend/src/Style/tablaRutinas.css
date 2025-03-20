@@ -1,0 +1,30 @@
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-custom th,
+.table-custom td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.table-custom th {
+    background-color: #003333; 
+    color: white;
+    font-weight: bold;
+}
+
+.table-custom tr:nth-child(odd) {
+    background-color: #b0e892; 
+}
+
+.table-custom tr:nth-child(even) {
+    background-color: #b0e8a5;
+}
+
+.table-custom i {
+    margin-right: 5px;
+}

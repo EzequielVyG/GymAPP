@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../Style/tablaTurnos.css";
 
 const horariosManana = ["07:30", "08:30", "09:30", "10:30", "11:30", "12:30"];
 const horariosTarde = ["14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
@@ -14,16 +14,16 @@ function Turnos() {
 
   const getColor = (cantidad) => {
     const porcentaje = (cantidad / maxPersonas) * 100;
-    if (porcentaje <= 50) return "bg-success";
-    if (porcentaje <= 80) return "bg-warning";
-    return "bg-danger";
+    if (porcentaje <= 50) return "success";
+    if (porcentaje <= 80) return "warning";
+    return "danger";
   };
 
   return (
-    <div className="container mt-4">
-      <h2 className="mb-3 text-center">Turnos Disponibles</h2>
-      <table className="table table-striped">
-        <thead className="table-dark">
+    <div className="container">
+            <h2 className="mb-3 text-center text-white p-3 rounded" style={{backgroundColor:"#027c68"}}>Turnos Disponibles</h2>
+      <table className="turnos-table">
+        <thead>
           <tr>
             <th>Horario</th>
             <th>Personas</th>
@@ -36,14 +36,8 @@ function Turnos() {
               <td>{turno.hora}</td>
               <td>{turno.personas} / {maxPersonas}</td>
               <td>
-                <div className="progress" style={{ height: "20px" }}>
-                  <div
-                    className={`progress-bar ${getColor(turno.personas)}`}
-                    role="progressbar"
-                    style={{ width: `${(turno.personas / maxPersonas) * 100}%` }}
-                  >
-                    {Math.round((turno.personas / maxPersonas) * 100)}%
-                  </div>
+                <div className={`progress-bar ${getColor(turno.personas)}`} style={{ width: `${(turno.personas / maxPersonas) * 100}%` }}>
+                  {Math.round((turno.personas / maxPersonas) * 100)}%
                 </div>
               </td>
             </tr>

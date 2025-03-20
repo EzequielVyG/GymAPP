@@ -1,5 +1,5 @@
 import React from "react";
-import "bootstrap-icons/font/bootstrap-icons.css";
+import "../Style/tablaClientes.css"
 import { clientes, rutinas } from "../Data/mockData"; 
 
 function getPagoClass(pago) {
@@ -28,12 +28,11 @@ function getRutinaNombre(idRutina) {
 function Clientes() {
   return (
     <div className="container mt-4">
-      <h2 className="mb-3 text-center">Lista de Clientes</h2>
+      <h2 className="mb-3 text-center text-white p-3 rounded" style={{backgroundColor:"#027c68"}}>Lista de Clientes</h2>
       <div className="table-responsive">
-        <table className="table table-hover table-bordered text-center">
-          <thead className="table-dark">
+        <table className="table-custom">
+          <thead>
             <tr>
-              <th>ID</th>
               <th>Nombre</th>
               <th>Rutina</th>
               <th>Pago</th>
@@ -42,7 +41,6 @@ function Clientes() {
           <tbody>
             {clientes.map(cliente => (
               <tr key={cliente.id} className={getPagoClass(cliente.pago)}>
-                <td>{cliente.id}</td>
                 <td>{cliente.nombre}</td>
                 <td>{getRutinaNombre(cliente.idRutina)}</td>
                 <td>{getPagoIcon(cliente.pago)} {cliente.pago}</td>

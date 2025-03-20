@@ -1,0 +1,50 @@
+
+    .turnos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .turnos-table th,
+  .turnos-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .turnos-table th {
+    background-color: #003333;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .turnos-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .turnos-table tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  /* Barra de progreso */
+  .progress-bar {
+    height: 20px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .progress-bar.success {
+    background-color: #28a745; /* Verde */
+  }
+  
+  .progress-bar.warning {
+    background-color: #ffc107; /* Amarillo */
+  }
+  
+  .progress-bar.danger {
+    background-color: #dc3545; /* Rojo */
+  }
+  

@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { rutinas } from "../Data/mockData";
+import "../Style/tablaRutinas.css"
 
 function Rutinas() {
   return (
-    <div className="container mt-3">
-      <h2 className="mb-3">Rutinas</h2>
-      <table className="table table-hover table">
-        <thead className="table-dark">
+    <div className="container mt-4">
+      <h2 className="mb-3 text-center text-white p-3 rounded" style={{backgroundColor:"#027c68"}}>Rutinas</h2>
+      <div className="table-responsive">
+        <table className="table-custom">
+          <thead>
           <tr>
-            <th>ID</th>
             <th>Nombre</th>
             <th>Duración</th>
             <th>Objetivo</th>
@@ -20,7 +21,6 @@ function Rutinas() {
         <tbody>
           {rutinas.map(rutina => (
             <tr key={rutina.id}>
-              <td>{rutina.id}</td>
               <td>{rutina.nombre}</td>
               <td>{rutina.duración}</td>
               <td>{rutina.objetivo}</td>
@@ -33,6 +33,7 @@ function Rutinas() {
         </tbody>
       </table>
     </div>
+  </div>
   );
 }
 

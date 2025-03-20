@@ -12,7 +12,7 @@ function Navbar() {
   const closeNavbar = () => setIsOpen(false);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark px-3" style={{ backgroundColor: "#017c64" }}>
+    <nav className="navbar navbar-expand-lg navbar-dark px-3" style={{ backgroundColor: "#003333" }}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">GymAPP</Link>
         
@@ -31,11 +31,6 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="/rutinas" onClick={closeNavbar}>
                 <i className="bi bi-person-arms-up"></i> Rutinas
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/seguimiento" onClick={closeNavbar}>
-                <i className="bi bi-eye-fill"></i> Seguimiento
               </Link>
             </li>
             <li className="nav-item">
